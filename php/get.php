@@ -1,5 +1,5 @@
 <?php
-include('connection.php'); // Conectar a la base de datos
+include('connection.php'); 
 
 // Consulta para obtener todos los álbumes
 $sql = "SELECT * FROM album";
@@ -21,12 +21,12 @@ if (mysqli_num_rows($result) > 0) {
         echo "</li>";
     }
 
-    echo "</ul>"; // Cerrar la lista
+    echo "</ul>"; 
 } else {
-    echo "No se encontraron álbumes."; // Mensaje si no hay álbumes
+    echo "No se encontraron álbumes."; 
 }
 
 //http://localhost/form2/php/get.php
 
-mysqli_close($connection); // Cerrar la conexión
+mysqli_close($connection); 
 ?>

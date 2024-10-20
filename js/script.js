@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const formInsert = document.getElementById('formInsert');
     if (formInsert) {
         formInsert.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+            event.preventDefault();
 
             const formData = new FormData(formInsert);
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //UPDATE ALBUM WITH PHP/FETCH
 document.addEventListener('DOMContentLoaded', function () {
-    const buttonUpdate = document.getElementById('buttonUpdate');
+    const buttonUpdate = document.getElementById('buttonUpdatePhp');
     if (buttonUpdate) {
         buttonUpdate.addEventListener('click', function (event) {
             event.preventDefault();
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //DELETE ALBUM WITH PHP / FETCH
 document.addEventListener('DOMContentLoaded', function () {
-    const buttonDelete = document.getElementById('buttonDelete');
+    const buttonDelete = document.getElementById('buttonDeletePhp');
     if (buttonDelete) {
         buttonDelete.addEventListener('click', function (event) {
             event.preventDefault();

@@ -1,0 +1,37 @@
+.navbar-purple {
+    background-color: #6f42c1 !important; /* Color morado */
+    margin-bottom: 5vh;
+}
+.btn-primary {
+    background-color: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+}
+.card {
+    border-color: #6f42c1;
+}
+label {
+    color: #6f42c1;
+}
+.form-image {
+    width: 50%; /* Ajustar al 100% del contenedor */
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    padding-top: 10px;
+}
+
+.custom-container {
+    height: auto; /* Ajustado para que el contenedor se adapte a su contenido */
+    display: flex;
+    flex-direction: column; /* Cambiado para que se apilen verticalmente */
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 20px; /* Espaciado entre formularios */
+}
+
+
+.custom-container.first {
+    margin-top: 30px; /* Ajusta este valor según tus necesidades */
+}
+
+

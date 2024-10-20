@@ -1,5 +1,5 @@
 .navbar-purple {
-    background-color: #6f42c1 !important; /* Color morado */
+    background-color: #6f42c1 !important; 
     margin-bottom: 5vh;
 }
 .btn-primary {
@@ -21,17 +21,17 @@ label {
 }
 
 .custom-container {
-    height: auto; /* Ajustado para que el contenedor se adapte a su contenido */
+    height: auto; 
     display: flex;
-    flex-direction: column; /* Cambiado para que se apilen verticalmente */
+    flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    margin-bottom: 20px; /* Espaciado entre formularios */
+    margin-bottom: 20px; 
 }
 
 
 .custom-container.first {
-    margin-top: 30px; /* Ajusta este valor según tus necesidades */
+    margin-top: 30px; 
 }
 
 

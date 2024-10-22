@@ -88,8 +88,7 @@ document.getElementById('btnDeleteAjax').addEventListener('click', function(even
 
     const idDelete = document.getElementById('idDelete').value;
 
-    // Cambiar 'id' a 'idDelete'
-    const params = 'idDelete=' + encodeURIComponent(idDelete); // Asegúrate de usar el mismo nombre
+    const params = 'idDelete=' + encodeURIComponent(idDelete); 
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/form2/php/delete.php', true);

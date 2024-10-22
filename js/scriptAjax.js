@@ -11,7 +11,7 @@ document.getElementById('btnInsertAjax').addEventListener('click', function(even
     // Validar que los datos
     if (!names || !artist || !stock || !launchDate) {
         console.log('Por favor, completa todos los campos.');
-        return; // Salir de la función si hay campos vacíos
+        return; 
     }
 
     // Esto crea parámetros
@@ -60,7 +60,7 @@ document.getElementById('btnUpdateAjax').addEventListener('click', function(even
     // Valida que los datos
     if (!idUpdate || !names || !artist || !stock || !launchDate) {
         console.log('Por favor, completa todos los campos.');
-        return; // Salir de la función si hay campos vacíos
+        return; 
     }
 
     // XMLHttpRequest

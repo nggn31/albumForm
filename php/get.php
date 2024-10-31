@@ -5,28 +5,22 @@ include('connection.php');
 $sql = "SELECT * FROM album";
 $result = mysqli_query($connection, $sql); // Ejecutar la consulta
 
+// Inicializa un array para almacenar los álbumes
+$albums = [];
+
 // Verificar si se encontraron álbumes
 if (mysqli_num_rows($result) > 0) {
-    echo "<h2>Lista de Álbumes</h2>";
-    echo "<ul>"; // Iniciar una lista desordenada
-
-    // Recorrer cada álbum y mostrarlo
+    // Recorrer cada álbum y agregarlo al array
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li>";
-        echo "ID: " . $row['id'] . " - ";
-        echo "Nombre: " . $row['names'] . " - ";
-        echo "Artista: " . $row['artist'] . " - ";
-        echo "Stock: " . $row['stock'] . " - ";
-        echo "Fecha de Lanzamiento: " . $row['launchDate'];
-        echo "</li>";
+        $albums[] = $row; // Agregar el álbum al array
     }
-
-    echo "</ul>"; 
+    // Devolver el array como JSON
+    echo json_encode($albums);
 } else {
-    echo "No se encontraron álbumes."; 
+    // Devolver un array vacío si no hay álbumes
+    echo json_encode([]);
 }
 
-//http://localhost/form2/php/get.php
-
+// Cerrar la conexión
 mysqli_close($connection); 
 ?>

@@ -22,14 +22,14 @@
             <div class="card">
                 <img src="/form2/styles/2.jpg" alt="Descripción de la imagen" class="form-image">
                 <div class="card-body">
-                    <h2 class="card-title">Registrar Álbum</h2>
+                    <h2 class="card-title">Register Álbum</h2>
                     <form id="formInsert" method="post" action="/form2/php/insert.php">
                         <div class="form-group mb-3">
-                            <label for="names">Nombre del Álbum:</label>
+                            <label for="names">Album Name:</label>
                             <input type="text" id="names" name="names" placeholder="Nombre del álbum" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="artist">Artista:</label>
+                            <label for="artist">Artist:</label>
                             <select name="artist" id="artist" class="form-control" required>
                                 <option value="skz">Stray Kids</option>
                                 <option value="laufey">Laufey</option>
@@ -42,7 +42,7 @@
                             <input type="number" id="stock" name="stock" placeholder="Stock" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="launchDate">Fecha de Lanzamiento:</label>
+                            <label for="launchDate">Launch Date:</label>
                             <input type="date" id="launchDate" name="launchDate" class="form-control" required>
                         </div>
                         <div class="form-group">
@@ -60,18 +60,18 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Actualizar Álbum</h2>
+                    <h2 class="card-title">Update Album</h2>
                     <form id="formUpdate" method="post" action="/form2/php/update.php">
                         <div class="form-group mb-3">
                             <label for="idUpdate">ID:</label>
                             <input type="text" id="idUpdate" name="id" placeholder="Agregar un ID:" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="nameUpdate">Nuevo Nombre:</label>
+                            <label for="nameUpdate">New Name:</label>
                             <input type="text" id="nameUpdate" name="names" placeholder="Agregar un nuevo nombre:" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="artistUpdate">Nuevo Artista:</label>
+                            <label for="artistUpdate">New Artist:</label>
                             <select name="artist" id="artistUpdate" class="form-control" required>
                                 <option value="skz">Stray Kids</option>
                                 <option value="laufey">Laufey</option>
@@ -80,15 +80,15 @@
                             </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="stockUpdate">Nuevo Stock:</label>
+                            <label for="stockUpdate">New Stock:</label>
                             <input type="number" id="stockUpdate" name="stock" placeholder="Stock" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="updateLaunchDate">Fecha de Lanzamiento:</label>
+                            <label for="updateLaunchDate">Launch Date:</label>
                             <input type="date" id="updateLaunchDate" name="launchDate" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" id="btnUpdatePhp">Update with FETCH</button>
+                            <button type="submit" class="btn btn-primary" id="btnUpdatePhp">Update with PHP</button>
                             <button type="submit" class="btn btn-primary" id="btnUpdateAjax">Update with AJAX</button>
                         </div>
                     </form>
@@ -102,14 +102,14 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Eliminar Álbum</h2>
+                    <h2 class="card-title">Delete Álbum</h2>
                     <form id="formDelete" method="post" action="/form2/php/delete.php">
                         <div class="form-group mb-3">
                             <label for="idDelete">ID:</label>
                             <input type="text" id="idDelete" name="id" placeholder="Agregar un ID:" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" id="btnDeletePhp">Delete with FETCH</button>
+                            <button type="submit" class="btn btn-primary" id="btnDeletePhp">Delete with PHP</button>
                             <button type="submit" class="btn btn-primary" id="btnDeleteAjax">Delete with AJAX</button>
                         </div>
                     </form>
@@ -117,6 +117,44 @@
             </div>
         </div>
     </div>
+
+    <div class="container custom-container">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Get Albums</h2>
+                    <form id="formGet">
+                        <button type="button" id="btnGetAjax" class="btn btn-primary">Get AJAX</button>
+                        <button type="button" id="btnGetPhp" class="btn btn-primary">Get PHP</button>
+                        <button type="button" id="btnClear" class="btn btn-primary">Clear Results</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contenedor para mostrar los resultados -->
+    <div class="container custom-container">
+        <div id="resultContainer">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Artista</th>
+                        <th>Stock</th>
+                        <th>Fecha de Lanzamiento</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable">
+                    <!-- Los datos se insertarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+
 
     <script src="./js/script.js"></script>
     <script src="./js/scriptAjax.js"></script>

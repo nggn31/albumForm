@@ -2,7 +2,7 @@
 include('connection.php');
 
 //Esto se usa para recibir los datos del formulario
-$id = $_POST['idDelete']; //Ponemos el id por que nos va a ayudar a eliminar
+$id = $_POST['id']; //Ponemos el id por que nos va a ayudar a eliminar
 
 //Verifica que todos los campos esten presentes
 if(isset($id)){

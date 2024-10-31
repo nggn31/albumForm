@@ -104,3 +104,76 @@ document.getElementById('btnDeleteAjax').addEventListener('click', function(even
     // Esto envía la solicitud del formulario 
     xhr.send(params);
 });
+
+// GET TODOS LOS REGISTROS
+document.addEventListener('DOMContentLoaded', function () {
+    // Manejar el botón Get AJAX
+    const btnGetAjax = document.getElementById('btnGetAjax');
+    btnGetAjax.addEventListener('click', function () {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/form2/php/get.php', true);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                const resultTable = document.getElementById('resultTable');
+                resultTable.innerHTML = ''; // Limpiar tabla antes de insertar nuevos datos
+
+                data.forEach(album => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${album.id}</td>
+                        <td>${album.names}</td>
+                        <td>${album.artist}</td>
+                        <td>${album.stock}</td>
+                        <td>${album.launchDate}</td>
+                    `;
+                    resultTable.appendChild(row);
+                });
+            } else {
+                console.log('Error: ' + xhr.status);
+            }
+        };
+
+        xhr.send();
+    });
+
+    // Manejar el botón Get PHP
+    const btnGetPhp = document.getElementById('btnGetPhp');
+    btnGetPhp.addEventListener('click', function () {
+        const formGet = document.getElementById('formGet');
+        const formData = new FormData(formGet);
+        
+        fetch('/form2/php/get.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Asume que la respuesta es JSON
+        .then(data => {
+            const resultTable = document.getElementById('resultTable');
+            resultTable.innerHTML = ''; // Limpiar tabla antes de insertar nuevos datos
+
+            data.forEach(album => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${album.id}</td>
+                    <td>${album.names}</td>
+                    <td>${album.artist}</td>
+                    <td>${album.stock}</td>
+                    <td>${album.launchDate}</td>
+                `;
+                resultTable.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+});
+
+  // Manejar el botón Clear Results
+  const btnClear = document.getElementById('btnClear');
+  btnClear.addEventListener('click', function () {
+      const resultTable = document.getElementById('resultTable');
+      resultTable.innerHTML = ''; // Limpiar la tabla de resultados
+  });
